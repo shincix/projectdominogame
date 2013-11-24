@@ -2,6 +2,7 @@ package ui;
 
 import game.Manager;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.DefaultListModel;
@@ -10,7 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.Color;
+
 import javax.swing.border.BevelBorder;
+
 import java.util.List;
 
 import javax.swing.border.EtchedBorder;
@@ -18,6 +21,8 @@ import javax.swing.JLabel;
 
 import model.Domino;
 import model.DominoOnBoard;
+
+import javax.swing.ImageIcon;
 import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
@@ -51,6 +56,10 @@ public class RoomUI extends JFrame {
 	private JLabel QtdDominoPlayer1;
 	private JLabel QtdDominoPlayer2;
 	private JLabel QtdDominoPlayer3;
+	private JLabel lblpieceN1,lblpieceN2,lblpieceN3,lblpieceN4,lblpieceN5,lblpieceN6,lblpieceN7;
+	private JLabel lblpieceE1,lblpieceE2,lblpieceE3,lblpieceE4,lblpieceE5,lblpieceE6,lblpieceE7;
+	private JLabel lblpieceW1,lblpieceW2,lblpieceW3,lblpieceW4,lblpieceW5,lblpieceW6,lblpieceW7;
+	private JLabel lblpieceS1,lblpieceS2,lblpieceS3,lblpieceS4,lblpieceS5,lblpieceS6,lblpieceS7;
 	
 	private String me;
 	private String player1;
@@ -100,10 +109,46 @@ public class RoomUI extends JFrame {
 
 		Color color = new Color(255, 255, 255);
 
+		//Labels com as imagens das peÃ§as Panel oeste
+		lblpieceW1 = new JLabel();
+		lblpieceW2 = new JLabel();
+		lblpieceW3 = new JLabel();
+		lblpieceW4 = new JLabel();
+		lblpieceW5 = new JLabel();
+		lblpieceW6 = new JLabel();
+		lblpieceW7 = new JLabel();
+		
+		lblpieceW1.setBounds(15, 97, 62, 27);
+		lblpieceW2.setBounds(15, 127, 62, 27);
+		lblpieceW3.setBounds(15, 157, 62, 27);
+		lblpieceW4.setBounds(15, 187, 62, 27);
+		lblpieceW5.setBounds(15, 217, 62, 27);
+		lblpieceW6.setBounds(15, 247, 62, 27);
+		lblpieceW7.setBounds(15, 277, 62, 27);
+		
+		lblpieceW1.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceW2.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceW3.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceW4.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceW5.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceW6.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceW7.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));	
+		
+		//Panel oeste
 		JPanel panelWest = new JPanel();
 		panelWest.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panelWest.setBackground(color);
+		//panelWest.setBackground(color);
 		panelWest.setBounds(0, 0, 100, 537);
+		
+		//Adicionando os labels com as imagens das peÃ§as ao Panel oeste
+		panelWest.add(lblpieceW1);
+		panelWest.add(lblpieceW2);
+		panelWest.add(lblpieceW3);
+		panelWest.add(lblpieceW4);
+		panelWest.add(lblpieceW5);
+		panelWest.add(lblpieceW6);
+		panelWest.add(lblpieceW7);
+		
 		contentPane.add(panelWest);
 		panelWest.setLayout(null);
 
@@ -114,12 +159,48 @@ public class RoomUI extends JFrame {
 		String s = "Dominos: " + manager.getRoom().getPlayer(player1).getDominos().size();
 		QtdDominoPlayer1 = new JLabel(s);
 		QtdDominoPlayer1.setBounds(10, 39, 80, 14);
-		panelWest.add(QtdDominoPlayer1);
-
+		panelWest.add(QtdDominoPlayer1);	
+		
+		//Labels com as imagens das pecas Panel norte
+		lblpieceN1 = new JLabel();
+		lblpieceN2 = new JLabel();
+		lblpieceN3 = new JLabel();
+		lblpieceN4 = new JLabel();
+		lblpieceN5 = new JLabel();
+		lblpieceN6 = new JLabel();
+		lblpieceN7 = new JLabel();
+		
+		lblpieceN1.setBounds(100, 15, 27, 62);
+		lblpieceN2.setBounds(130, 15, 27, 62);
+		lblpieceN3.setBounds(160, 15, 27, 62);
+		lblpieceN4.setBounds(190, 15, 27, 62);
+		lblpieceN5.setBounds(220, 15, 27, 62);
+		lblpieceN6.setBounds(250, 15, 27, 62);
+		lblpieceN7.setBounds(280, 15, 27, 62);
+		
+		lblpieceN1.setIcon(new ImageIcon(getClass().getResource("/images/piece.png")));		
+		lblpieceN2.setIcon(new ImageIcon(getClass().getResource("/images/piece.png")));
+		lblpieceN3.setIcon(new ImageIcon(getClass().getResource("/images/piece.png")));
+		lblpieceN4.setIcon(new ImageIcon(getClass().getResource("/images/piece.png")));
+		lblpieceN5.setIcon(new ImageIcon(getClass().getResource("/images/piece.png")));		
+		lblpieceN6.setIcon(new ImageIcon(getClass().getResource("/images/piece.png")));		
+		lblpieceN7.setIcon(new ImageIcon(getClass().getResource("/images/piece.png")));
+		
+		//Panel norte
 		JPanel panelNorth = new JPanel();
+		
 		panelNorth.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panelNorth.setBackground(color);
 		panelNorth.setBounds(100, 0, 785, 100);
+		
+		//Adicionando os labels com as imagens das pecas ao panel norte
+		panelNorth.add(lblpieceN1);
+		panelNorth.add(lblpieceN2);
+		panelNorth.add(lblpieceN3);
+		panelNorth.add(lblpieceN4);
+		panelNorth.add(lblpieceN5);
+		panelNorth.add(lblpieceN6);
+		panelNorth.add(lblpieceN7);
+		
 		contentPane.add(panelNorth);
 		panelNorth.setLayout(null);
 
@@ -130,28 +211,99 @@ public class RoomUI extends JFrame {
 		s = "Dominos: " + manager.getRoom().getPlayer(player2).getDominos().size();
 		QtdDominoPlayer2 = new JLabel(s);
 		QtdDominoPlayer2.setBounds(10, 36, 134, 14);
-		panelNorth.add(QtdDominoPlayer2);
-
+		panelNorth.add(QtdDominoPlayer2);		
+		
+		//Labels com as imagens das peÃ§as Panel leste
+		lblpieceE1 = new JLabel();
+		lblpieceE2 = new JLabel();
+		lblpieceE3 = new JLabel();
+		lblpieceE4 = new JLabel();
+		lblpieceE5 = new JLabel();
+		lblpieceE6 = new JLabel();
+		lblpieceE7 = new JLabel();
+				
+		lblpieceE1.setBounds(15, 97, 62, 27);
+		lblpieceE2.setBounds(15, 127, 62, 27);
+		lblpieceE3.setBounds(15, 157, 62, 27);
+		lblpieceE4.setBounds(15, 187, 62, 27);
+		lblpieceE5.setBounds(15, 217, 62, 27);
+		lblpieceE6.setBounds(15, 247, 62, 27);
+		lblpieceE7.setBounds(15, 277, 62, 27);
+				
+		lblpieceE1.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceE2.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceE3.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceE4.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceE5.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceE6.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+		lblpieceE7.setIcon(new ImageIcon(getClass().getResource("/images/pieceh.png")));
+				
+		//Panel leste
 		JPanel panelEast = new JPanel();
-		panelEast.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panelEast.setBackground(color);
+		//panelEast.setBackground(color);
+		panelEast.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));		
 		panelEast.setBounds(884, 0, 100, 537);
+					
+		//Adicionando os labels com as imagens das peÃ§as ao Panel leste
+		panelEast.add(lblpieceE1);
+		panelEast.add(lblpieceE2);
+		panelEast.add(lblpieceE3);
+		panelEast.add(lblpieceE4);
+		panelEast.add(lblpieceE5);
+		panelEast.add(lblpieceE6);
+		panelEast.add(lblpieceE7);
+		
 		contentPane.add(panelEast);
 		panelEast.setLayout(null);
 
 		JLabel lblPlayer_3 = new JLabel(manager.getRoom().getPlayer(player3).getUsername());
-		lblPlayer_3.setBounds(10, 11, 80, 14);
+		lblPlayer_3.setBounds(10, 11, 134, 14);
 		panelEast.add(lblPlayer_3);
 
-		s = "Dominos: " + manager.getRoom().getPlayer(player3).getDominos().size();
+		s = "Domi " + manager.getRoom().getPlayer(player3).getDominos().size();
 		QtdDominoPlayer3 = new JLabel(s);
-		QtdDominoPlayer3.setBounds(10, 35, 80, 14);
+		QtdDominoPlayer3.setBounds(10, 35, 134, 14);
 		panelEast.add(QtdDominoPlayer3);
 
+		//Labels com as imagens das peÃ§as Panel sul
+		lblpieceS1 = new JLabel();
+		lblpieceS2 = new JLabel();
+		lblpieceS3 = new JLabel();
+		lblpieceS4 = new JLabel();
+		lblpieceS5 = new JLabel();
+		lblpieceS6 = new JLabel();
+		lblpieceS7 = new JLabel();
+						
+		lblpieceS1.setBounds(2, 28, 27, 62);
+		lblpieceS2.setBounds(32, 28, 27, 62);
+		lblpieceS3.setBounds(62, 28, 27, 62);
+		lblpieceS4.setBounds(92, 28, 27, 62);
+		lblpieceS5.setBounds(122, 28, 27, 62);
+		lblpieceS6.setBounds(152, 28, 27, 62);
+		lblpieceS7.setBounds(182, 28, 27, 62);
+	 				
+		lblpieceS1.setIcon(new ImageIcon(getClass().getResource("/images/"+ manager.getRoom().getPlayer(me).getDominos().get(0).toString() + ".png")));
+		lblpieceS2.setIcon(new ImageIcon(getClass().getResource("/images/"+ manager.getRoom().getPlayer(me).getDominos().get(1).toString() + ".png")));
+		lblpieceS3.setIcon(new ImageIcon(getClass().getResource("/images/"+ manager.getRoom().getPlayer(me).getDominos().get(2).toString() + ".png")));
+		lblpieceS4.setIcon(new ImageIcon(getClass().getResource("/images/"+ manager.getRoom().getPlayer(me).getDominos().get(3).toString() + ".png")));
+		lblpieceS5.setIcon(new ImageIcon(getClass().getResource("/images/"+ manager.getRoom().getPlayer(me).getDominos().get(4).toString() + ".png")));
+		lblpieceS6.setIcon(new ImageIcon(getClass().getResource("/images/"+ manager.getRoom().getPlayer(me).getDominos().get(5).toString() + ".png")));
+		lblpieceS7.setIcon(new ImageIcon(getClass().getResource("/images/"+ manager.getRoom().getPlayer(me).getDominos().get(6).toString() + ".png")));
+		
+		//Panel sul
 		JPanel panelSouth = new JPanel();
 		panelSouth.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panelSouth.setBackground(color);
+		//panelSouth.setBackground(color);
 		panelSouth.setBounds(100, 437, 785, 100);
+		
+		panelSouth.add(lblpieceS1);
+		panelSouth.add(lblpieceS2);
+		panelSouth.add(lblpieceS3);
+		panelSouth.add(lblpieceS4);
+		panelSouth.add(lblpieceS5);
+		panelSouth.add(lblpieceS6);
+		panelSouth.add(lblpieceS7);
+		
 		contentPane.add(panelSouth);
 		panelSouth.setLayout(null);
 
@@ -159,7 +311,7 @@ public class RoomUI extends JFrame {
 		lblPlayer.setBounds(10, 11, 146, 14);
 		panelSouth.add(lblPlayer);
 
-		s = "Dominnos: " + DominoForLabel(manager.getRoom().getPlayer(me).getDominos());
+		s = "Dominos: " + DominoForLabel(manager.getRoom().getPlayer(me).getDominos());
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(212, 11, 193, 78);
@@ -216,38 +368,53 @@ public class RoomUI extends JFrame {
 		btnPass.setBounds(675, 11, 89, 57);
 		panelSouth.add(btnPass);
 
+		
+		
+		//Label com img da mesa
+		JLabel lblmesa = new JLabel();
+		lblmesa.setBounds(1, 1, 779, 336);
+		lblmesa.setIcon(new ImageIcon(getClass().getResource("/images/border.png")));
+		
+		//Painel central com imagem da mesa
 		JPanel panelCenter = new JPanel();
 		panelCenter.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panelCenter.setBackground(new Color(80, 200, 120));
 		panelCenter.setBounds(100, 100, 782, 339);
+		
+		//panelCenter.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		
+		//panelCenter.setBackground(new Color(100, 200, 220));
+
+		panelCenter.add(lblmesa);
+		
+		
 		contentPane.add(panelCenter);
 		panelCenter.setLayout(null);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(90, 69, 170, 183);
-		panelCenter.add(scrollPane_1);
+		lblmesa.add(scrollPane_1);
 
 		list_left = new JList(BoardLeftList());
 		scrollPane_1.setViewportView(list_left);
 
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(324, 67, 154, 189);
-		panelCenter.add(scrollPane_2);
+		lblmesa.add(scrollPane_2);
 
 		list_right = new JList(BoardRightList());
 		scrollPane_2.setViewportView(list_right);
 
 		JLabel lblLeft = new JLabel("Left");
 		lblLeft.setBounds(92, 50, 46, 14);
-		panelCenter.add(lblLeft);
+		lblmesa.add(lblLeft);
 
 		JLabel lblRight = new JLabel("Right");
 		lblRight.setBounds(324, 50, 46, 14);
-		panelCenter.add(lblRight);
+		lblmesa.add(lblRight);
 		
 		lblDominosAvaliables = new JLabel("Dominos Avaliables:");
 		lblDominosAvaliables.setBounds(606, 11, 154, 14);
-		panelCenter.add(lblDominosAvaliables);
+		lblmesa.add(lblDominosAvaliables);
 
 		textArea.setBounds(0, 537, 984, 69);
 		textArea.setEnabled(false);
@@ -356,8 +523,8 @@ public class RoomUI extends JFrame {
 	}
 	
 	/*
-	 * Será necessário colocar esse refresh em uma thread. Refresh constante...
-	 * Porém quando o usuário estiver jogando, parar a thread até que ele conclua a jogada
+	 * Serï¿½ necessï¿½rio colocar esse refresh em uma thread. Refresh constante...
+	 * Porï¿½m quando o usuï¿½rio estiver jogando, parar a thread atï¿½ que ele conclua a jogada
 	 * 
 	 */
 	private void refresh() {
