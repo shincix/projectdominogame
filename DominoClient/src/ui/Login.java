@@ -104,8 +104,10 @@ public class Login extends JFrame implements ActionListener {
 			} else {
 				if (manager.login(username)) {
 					dispose();
-					Wait waitFrame = new Wait(manager);
-					waitFrame.setVisible(true);
+					OnlineUsersUI o = new OnlineUsersUI(manager);
+					o.setVisible(true);
+					//Wait waitFrame = new Wait(manager);
+					//waitFrame.setVisible(true);
 				} else {
 					String msg = "Não foi possível conectar:\n";
 					
