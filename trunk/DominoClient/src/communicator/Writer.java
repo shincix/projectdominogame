@@ -19,6 +19,7 @@ public class Writer {
 	
 	public void write(Object object) throws IOException {
 		System.out.println(">> Write: " + object);
+		oos.reset();
 		oos.writeObject(object);
 		flush();
 	}
