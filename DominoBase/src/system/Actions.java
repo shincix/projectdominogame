@@ -46,11 +46,22 @@ public final class Actions {
 	/**
 	 * Get online users in server
 	 */
-	public static final String ONLINE_USERS = "onlieUsers";
+	public static final String ONLINE_USERS = "onlineUsers";
 	
 	/**
 	 * A client invite other to play
 	 */
 	public static final String INVITE = "invite";
+	
+	/**
+	 * 
+	 */
+	public static final String CHAT_MESSAGE = "chatMessage";
+
+	public static final String STATUS_INVITE = "statusInvite";
+
+	public static final String RESPONSE_INVITE = "responseInvite";
+
+	public static final String START_GAME = "startGame";
 
 }

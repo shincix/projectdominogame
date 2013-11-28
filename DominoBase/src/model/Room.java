@@ -16,7 +16,9 @@ import system.Parameters;
 public class Room implements Serializable {
 
 	private static final long serialVersionUID = -3183120280903804020L;
-
+	
+	private int id;
+	
 	// Players in room
 	private List<Player> players;
 
@@ -32,11 +34,12 @@ public class Room implements Serializable {
 	// Determines it the game finished
 	private boolean finishedGame;
 
-	public Room() {
+	public Room(int id) {
 		setPlayers(new ArrayList<Player>());
 		setDominosAvailable(new ArrayList<Domino>());
 		setGameStarted(false);
 		generateDominos();
+		this.id = id;
 	}
 
 	/**
@@ -417,6 +420,10 @@ public class Room implements Serializable {
 	}
 
 	// Getters and Setters
+
+	public int getId() {
+		return id;
+	}
 
 	public boolean isGameStarted() {
 		return gameStarted;
